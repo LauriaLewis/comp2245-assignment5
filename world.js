@@ -1,35 +1,35 @@
-document.addEventListener('DOMContentLoaded', function(){
-    // Get the lookup button and lookup cities button
-    const lookupBtn = document.getElementById('lookup');
-    const lookupCitiesBtn = document.getElementById('lookup-cities');
+window.onload = function () {
+  var countrybtnlookup = document.getElementById("lookup");
+  countrybtnlookup.addEventListener("click", function () {
+    let country = document.getElementById("country").value;
+    let url = "http://localhost/comp2245-assignment55/world.php?country=";
 
-    // Function to handle the XMLHttpRequest
-    function makeRequest(url, callback) {
-        return function (event) {
-            event.preventDefault();
+    let dhttp = new XMLHttpRequest();
+    let result = document.getElementById("result");
+    dhttp.onreadystatechange = function () {
+      if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+        result.innerHTML = dhttp.response;
+      }
+    };
 
-            const country = document.getElementById('country');
-            const result = document.getElementById('result');
-            let requested = country.name + "=" + country.value;
+    dhttp.open("GET", url + country, true);
+    dhttp.send();
+  });
 
-            const xhr = new XMLHttpRequest();
+  var citybtnlookup = document.getElementById("lookup-cities");
+  citybtnlookup.addEventListener("click", function () {
+    let country = document.getElementById("country").value; 
+    let url = `http://localhost/comp2245-assignment55/world.php?context=${country}&lookup=cities`;
 
-            xhr.onload = function () {
-                callback(result, this.responseText);
-            }
+    let dhttp = new XMLHttpRequest();
+    let result = document.getElementById("result");
+    dhttp.onreadystatechange = function () {
+      if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+        result.innerHTML = dhttp.response;
+      }
+    };
 
-            xhr.open("GET", url + requested, true);
-            xhr.send();
-        };
-    }
-
-    // Add click event listeners for both buttons
-    lookupBtn.addEventListener('click', makeRequest("world.php?", updateResult));
-    lookupCitiesBtn.addEventListener('click', makeRequest("world.php?context=cities&", updateResult));
-
-    // Callback function to update the result element
-    function updateResult(resultElement, responseText) {
-        console.log(responseText);
-        resultElement.innerHTML = responseText;
-    }
-});
+    dhttp.open("GET", url, true);
+    dhttp.send();
+  });
+};

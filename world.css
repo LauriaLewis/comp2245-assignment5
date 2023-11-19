@@ -1,57 +1,12 @@
 /* Add your own styles */
 
-* {
-  padding: 0%;
-}
-
-body {
-  background-color: seashell;
-  margin-top: 10px; /* Added from the second stylesheet */
-  font-family: "Courier New", Courier, monospace; /* Added from the second stylesheet */
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 header {
-  background-color: #4a5568; /* Updated from the second stylesheet */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4a5568;
   color: white;
-  text-align: center;
-  padding: 20px;
-  display: flex; /* Added from the second stylesheet */
-  align-items: center; /* Added from the second stylesheet */
-  justify-content: center; /* Added from the second stylesheet */
-  margin-bottom: 30px; /* Added from the second stylesheet */
-}
-
-.search-results {
-  width: 70%;
-}
-
-.search-results > input {
-  width: 80%;
-  padding: 5px;
-  margin-top: 10px;
-  border-radius: 5px;
-  border-width: 0;
-  margin-bottom: 20px;
-  border: solid black 1px;
-}
-
-.search-results > button {
-  width: 100px;
-  padding: 5px;
-  background-color: red;
-  color: seashell;
-  border-radius: 5px;
-  border-width: 0;
-}
-
-.not-found {
-  color: red;
+  margin-bottom: 30px;
 }
 
 main {
@@ -59,6 +14,12 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+body {
+  background-color: #f7fafc;
+  margin-top: 10px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 table {
@@ -87,7 +48,9 @@ tbody tr:nth-child(even) {
   border-radius: 5px;
   color: white;
 }
-
+#lookup:hover {
+  background-color: #abcdef;
+}
 #lookup-cities {
   background-color: #4299e1;
   padding: 5px;
@@ -95,6 +58,9 @@ tbody tr:nth-child(even) {
   width: 100px;
   border-radius: 5px;
   color: white;
+}
+#lookup-cities:hover {
+  background-color: #abcdef;
 }
 
 .btn-group {
