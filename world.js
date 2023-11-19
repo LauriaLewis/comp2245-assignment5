@@ -2,7 +2,7 @@ window.onload = function () {
   var countrybtnlookup = document.getElementById("lookup");
   countrybtnlookup.addEventListener("click", function () {
     let country = document.getElementById("country").value;
-    let url = "http://localhost/comp2245-assignment55/world.php?country=";
+    let url = "http://localhost/comp2245-assignment5/world.php?country=";
 
     let dhttp = new XMLHttpRequest();
     let result = document.getElementById("result");
@@ -19,7 +19,7 @@ window.onload = function () {
   var citybtnlookup = document.getElementById("lookup-cities");
   citybtnlookup.addEventListener("click", function () {
     let country = document.getElementById("country").value; 
-    let url = `http://localhost/comp2245-assignment55/world.php?context=${country}&lookup=cities`;
+    let url = `http://localhost/comp2245-assignment5/world.php?context=${country}&lookup=cities`;
 
     let dhttp = new XMLHttpRequest();
     let result = document.getElementById("result");
